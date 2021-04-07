@@ -1,0 +1,6 @@
+BackupUtil running
+BackupUtil - not new month - syncing
+Local running job; verbose output enabled
+sending incremental file list
+rsync: readdir("/mnt/remote/AaronsData/Code/ "): Not a directory (20)
+delta-transmission disabled for local transfer or --whole-file
