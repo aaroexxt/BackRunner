@@ -1,11 +1,11 @@
 # BackRunner
- Utility to routinely backup local file server to store, and automatically manage monthly backups and local storage
+ Utility to routinely backup local file server to store, and automatically manage monthly backups
 
 # Setup
-Here's a brief overview of the setup process I'm using.
+Here's a brief overview of the setup process I'm using:
 
 #### Mounting
-First, make sure that you've mounted both your remote drive and local drive to /mnt/remote and /mnt/backup, respectively
+First, make sure that you've mounted both your remote drive and local drive to `/mnt/remote` and `/mnt/backup`, respectively
 
 Example fstab command for loading remote store:
 
@@ -20,7 +20,7 @@ This command will add all output to `log.txt`, a local file that you can then re
 
 #### Setting up Crontab
 
-Of course, you want to configure this to your system, but here's how I have my crontab set up:
+Of course, you want to reconfigure this to work on your system, but here's how I have my crontab set up:
 ```
 SHELL=/bin/bash
 MAILTO=johndoe@example.com
