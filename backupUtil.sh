@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# modified from: https://www.howtoforge.com/tutorial/raspberry-pi-as-backup-server-for-linux-and-windows/
+# from: https://www.howtoforge.com/tutorial/raspberry-pi-as-backup-server-for-linux-and-windows/
 
 basePath="/mnt/backup/backups"
 drive="/mnt/backup"
@@ -59,6 +59,8 @@ function checkFree ()
 }
 
 
+sudo touch "${drive}/runLog.txt"
+curTime=$(date +"%Y-%m-%d @ %r")
 
 case ${action} in
 
@@ -69,4 +71,17 @@ case ${action} in
                         makeHardlink
                         checkFree
                         ;;
+	backupEndError)
+			echo "${curTime}: Uhoh, backup ended with an error! ReturnCode: $2, LineNo: $3" >> "${drive}/runLog.txt"
+			;;
+	backupStart)
+			echo "${curTime}: Backup started" >> "${drive}/runLog.txt"
+			;;
+	backupEndClean)
+			echo "${curTime}: Backup ended successfully" >> "${drive}/runLog.txt"
+			;;
+	backupUserStop)
+			echo "${curTime}: User stopped backup forcibly" >> "${drive}/runLog.txt"
+			;;
+			
 esac
