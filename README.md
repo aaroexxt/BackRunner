@@ -22,13 +22,12 @@ This command will add all output to `log.txt`, a local file that you can then re
 
 Of course, you want to reconfigure this to work on your system, but here's how I have my crontab set up:
 ```
-SHELL=/bin/bash
 MAILTO=johndoe@example.com
 
-26 5 * * 1 /mnt/backup/runner.sh
+26 5 * * * /bin/bash /mnt/backup/runner.sh
 ```
 
-This will run the backup every Monday at 5:26AM (frc team heh)
+This will run the backup every day at 5:26AM (frc team heh)
 
 In addition, it will email me the output when it is finished. The script automatically detects that cron is running it and turns off rsync verbose mode.
 
