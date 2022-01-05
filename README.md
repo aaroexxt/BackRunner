@@ -45,4 +45,4 @@ Well, this hasn't happened to me yet, so I might update this if it does, but her
 
 Finally, here's the command I use to copy all the remote files of importance to my desktop:
 
-`scp -r pi@192.168.1.71:/mnt/backup/\{runner.sh,backupUtil.sh,runLog.txt} ./`
+`scp -r pi@192.168.1.71:/mnt/backup/\{runner.sh,backupUtil.sh,runLog.txt\} ./`
