@@ -4,6 +4,10 @@
 # Setup
 Here's a brief overview of the setup process I'm using:
 
+- Install NTFS-3g with `sudo apt-get install -y ntfs-3g`
+- Run `sudo blkid` to get UUID of local drive
+- Run `sudo mkdir /mnt/backup && sudo mkdir /mnt/remote` to create paths to mount things
+
 #### Mounting
 First, make sure that you've mounted both your remote drive and local drive to `/mnt/remote` and `/mnt/backup`, respectively
 
